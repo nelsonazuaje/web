@@ -79,25 +79,23 @@
                             Inicio de sesion
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form method="POST" action="user.html">
                                 <div class="row">
                                   
                                     <div class="col-6 form-group">
                                         <label for="nombres">Nombre</label>
-                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="origen">Contraseña</label>
-                                        <input type="text" class="form-control" id="contraseña" placeholder="Contraseña" required>
+                                        <input type="text" class="form-control" name="contrase" id="contraseña" placeholder="Contraseña" required>
                                    
                                    </div>
                                     
                                     <div class="container text-center" >                    
                                         <div class="col-lg-12 " style="margin-top: 3%">
-                                            <a href="user.html" class="btn btn-primary btn-lg btn-block">Ingresar</a>
+                                            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Ingresar">
 											<a href="registro.html" class="btn btn-primary btn-lg btn-block">Registrarse</a>
-                                                
-                                                             
                                         </div>  
                                          
                                     </div>                       
