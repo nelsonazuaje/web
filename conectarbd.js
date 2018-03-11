@@ -2,8 +2,14 @@ var mysql = require('mysql');
 var express = require('express');
 var body_parser = require('body-parser');
 var app = express();
+var path    = require("path");
 app.use(body_parser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/'));
+
+app.get('/user',function(req,res){
+    res.sendFile(path.join(__dirname +'/user.html'));
+    //__dirname : It will resolve to your project folder.
+  });
 
 const server=app.listen(8000, () => {
   console.log('Servidor web iniciado');
@@ -40,6 +46,6 @@ app.post('/user.html', function (req, res) {
             conectar.end();
         }
     });
-    res.render('user');
+    res.sendFile(path.join(__dirname +'/user.html'));
     
 });
