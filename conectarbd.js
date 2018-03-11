@@ -42,7 +42,11 @@ app.post('/user.html', function (req, res) {
         if(err){
             throw console.log(err);
         }else {
-            console.log(result);
+                var usuario = {id: result[0].idcliente, name: result[0].nombre, email: result[0].correo, 
+                pass: result[0].contraseña, edad: result[0].edad, telefono: result[0].telefono,
+                direct: result[0].direccion
+                }
+            console.log(usuario);
             conectar.end();
         }
     });
