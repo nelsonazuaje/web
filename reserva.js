@@ -27,7 +27,7 @@ var con = mysql.createConnection({
 
 /**Funcion para insertar en la reserva**/
 
-app.post('/reservar.html', function (req, res) {
+app.post('/servicios.html', function (req, res) {
     var origen = req.body.origen;
     var destino = req.body.destino; 
 	var agencia = req.body.agencia;
@@ -56,6 +56,6 @@ app.post('/reservar.html', function (req, res) {
     });
 	 
     
-	res.render('servicios');
+	res.sendFile(path.join(__dirname +'/servicios.html'));
     
 });
