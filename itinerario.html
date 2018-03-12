@@ -79,17 +79,30 @@
                             Consultar itinerario
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form method="post" action="/data">
                                 <div class="row">
                                     <div class="col-6 form-group">
                                         <label for="numviaje">Número viaje (se encuentra en su boleto)</label>
-                                        <input type="number" class="form-control" id="numviaje" placeholder="Número de viaje" onchange="ValidaNum(this.value)">
+                                        
+                                        <input type="number" class="form-control" id="numviaje" name="numviaje" placeholder="Número de viaje" onchange="ValidaNum(this.value)">
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="iditi">ID itinerario</label>
-                                        <input type="number" class="form-control" id="iditi" placeholder="ID" onchange="ValidaNum(this.value)">
+                                       
+                                        <input type="number" class="form-control" id="iditi" name="iditi" placeholder="ID" onchange="ValidaNum(this.value)">
                                     </div>
-                                    <button type="button" class="btn btn-primary btn-lg btn-block">Consultar</button>
+
+                                    <DIV class="col-6 form-group">
+                                        <label for="salidareport">ID itinerario</label>
+                                       
+
+                                    </DIV>
+
+
+
+
+
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Consultar</button>
 									<a href="user.html" class="btn btn-danger btn-lg btn-block">Regresar al área de usuario</a>
                                    
                                     <p>*Datos obligatorios para verificacion de usuario</p>
@@ -130,7 +143,7 @@
 //comprueba campo teléfono de formulario
 //usa el metodo test de expresion regular
 
-        if(/[0-9]\d{10}/.test(nv)){
+       /* if(/[0-9]\d{10}/.test(nv)){
       //    alert("El número es correcto.");
         return (true);
         }
@@ -138,7 +151,7 @@
         {
         alert('El número ingresado no es válido.');
         return false; //no submit
-        }
+        }*/
 
     }
     </script>

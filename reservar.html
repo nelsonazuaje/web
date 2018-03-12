@@ -83,7 +83,7 @@
                                 <div class="row">
                                     <div class="col-6 form-group">
                                         <label for="origen">* Origen</label>
-                                        <select id="origen" class="form-control" required>
+                                        <select id="origen" name="origen" class="form-control" required>
                                             <option value="">Seleccionar origen</option>
                                             <option value="caracas">Caracas</option>
                                             <option value="valencia">Valencia</option>
@@ -98,7 +98,7 @@
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="destino">* Destino</label>
-                                        <select id="destino" class="form-control" required>
+                                        <select id="destino" name="destino" class="form-control" required>
                                             <option value="">Seleccionar destino</option>
                                             <option value="caracas">Caracas</option>
                                             <option value="valencia">Valencia</option>
@@ -113,10 +113,10 @@
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="agencia">* Agencia</label>
-                                        <select id="agencia" class="form-control" required>
+                                        <select id="agencia" name="agencia" class="form-control" required>
                                             <option>Seleccionar agencia</option>
                                             <option>Agencia Veneviajes</option>
-                                            <option>Brasil Tours</option>
+                                            <option>Maracaibo Tours</option>
                                             <option>La Carabobeña</option>
                                             <option>Bogota turismo</option>
                                             <option>Agencia de viajes Turismax</option>
@@ -125,17 +125,29 @@
                                      </div>
                                      <div class="col-6 form-group">
                                         <label for="numero">* Numero de tarjeta o cuenta de pago</label>
-                                        <input type="text" class="form-control" id="numero" placeholder="Numero de tarjeta" onchange="ValidarTJ(this.value)" required>
+                                        <input type="text" name="numero" class="form-control" id="numero" placeholder="Numero de tarjeta" onchange="ValidarTJ(this.value)" required>
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="fecha">* Fecha de viaje</label>
-                                        <input type="date" class="form-control" id="fecha" placeholder="fecha" required>
+                                        <input type="date" name="fecha" class="form-control" id="fecha" placeholder="fecha" required>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="tlf">Numero de teléfono</label>
-                                      <input type="tel" class="form-control" id="tlf" placeholder="Telefono" onchange="ValidaTelefono(this.value)" required>
+                                        <label for="cedula">Id del Cliente</label>
+                                        <input type="text" name="cedula" class="form-control" id="cedula" placeholder="Cedula" >
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Reservar/Comprar</button>
+									<div class="col-6 form-group">
+                                        <label for="NroPasaje">Número del Pasaje</label>
+                                        <input type="text" name="nroPasaje" class="form-control" id="nroPasaje" placeholder="nroPasaje" >
+                                    </div>
+									 <div class="col-6 form-group">
+                                        <label for="Elegir">* Compra o Reserva</label>
+                                        <select id="elegir" name="elegir" class="form-control" required>
+                                            <option value="">Seleccionar opción</option>
+                                            <option value="compra">compra</option>
+                                            <option value="reserva">reserva</option>
+                                        </select>
+                                     </div>
+									<input type="submit" class="btn btn-primary btn-lg btn-block" value="Reservar/Comprar">
 									<a href="user.html" class="btn btn-danger btn-lg btn-block">Regresar al área de usuario</a>
                                    
                                     <p>*Datos obligatorios</p>
@@ -179,15 +191,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
         $('.carousel').carousel()
-
     </script>
     
 
     <script>
-
 //Cedula 
 function ValidaCedula(id){
-
   if(/^[1-2]\d{3}\d{4}$/.test(id)){
     alert("La cedula es correcta.");
     return (true);
@@ -198,8 +207,6 @@ function ValidaCedula(id){
     return false; //no submit
     }
 }
-
-
 //Tarjeta de C
 function ValidarTJ(numero) {
     var cadena = codigo.toString();
@@ -219,19 +226,16 @@ function ValidarTJ(numero) {
     for (var i=1; i < longitud; i+=2){
     suma += parseInt(cadena.charAt(i));
     }
-
     if ((suma % 10) == 0){ 
     alert("Número de tarjeta correcto");
     } else {
     alert("El número de tarjeta no es válido");
     }
 }
-
 function ValidaTelefono(tlf)
 { 
 //comprueba campo teléfono de formulario
 //usa el metodo test de expresion regular
-
     if(/[0-9]\d{10}/.test(tlf)){
     alert("El número telefónico es correcto.");
     return (true);
@@ -241,12 +245,12 @@ function ValidaTelefono(tlf)
     alert('El número de teléfono ingresado no es válido.');
     return false; //no submit
     }
-
 }
-
-
  </script>
 
 
-  </body>
+
+ 
+ 
+</body>
 </html>

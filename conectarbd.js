@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/'));
 const server=app.listen(8000, () => {
   console.log('Servidor web iniciado');
 }); 
- 
+
 app.get('/user',function(req,res){
     res.sendFile(path.join(__dirname +'/user.html'));
     //__dirname : It will resolve to your project folder.
@@ -45,11 +45,7 @@ app.post('/user.html', function (req, res) {
         if(err){
             throw console.log(err);
         }else {
-                var usuario = {id: result[0].idcliente, name: result[0].nombre, email: result[0].correo, 
-                pass: result[0].contraseña, edad: result[0].edad, telefono: result[0].telefono,
-                direct: result[0].direccion
-                }
-            console.log(usuario);
+            console.log(result);
             conectar.end();
         }
     });
