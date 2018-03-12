@@ -79,7 +79,7 @@
                            	Registrarse
                         </div>
                         <div class="card-body">
-                            <form method="post" action="/data">
+                            <form method="POST" action="/login.html">
                                 <div class="row">
 									<div class="col-6 form-group">
                                         <label for="id">*Número de identidad (cedula, pasaporte, dni)</label>
@@ -91,20 +91,10 @@
                                     </div>
 									<div class="col-6 form-group">
                                         <label for="origen">*Contraseña</label>
-                                        <input type="text" class="form-control" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+                                        <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Contraseña" required>
                                    
                                    </div>
-                                    
                                     <div class="col-6 form-group">
-                                        <select class="form-control">
-                                            <option>Seleccionar pais</option>
-                                            <option>Venezuela</option>
-                                            <option>Argentina</option>
-                                            <option>Chile</option>
-                                        </select>
-                                     </div>
-                                    
-                                     <div class="col-6 form-group">
                                         <label for="edad">*Edad</label>
                                         <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad">
                                     </div>
