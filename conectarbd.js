@@ -6,14 +6,17 @@ var path    = require("path");
 app.use(body_parser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/'));
 
+const server=app.listen(8000, () => {
+  console.log('Servidor web iniciado');
+}); 
+ 
 app.get('/user',function(req,res){
     res.sendFile(path.join(__dirname +'/user.html'));
     //__dirname : It will resolve to your project folder.
-  });
-
-const server=app.listen(8000, () => {
-  console.log('Servidor web iniciado');
 });
+
+
+
 
 var conectar = mysql.createConnection(
     {
